@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shelf_films_clinet02">
    <application
+        android:usesCleartextTraffic="true"
         android:label="shelf_films_clinet02"
         android:icon="@mipmap/ic_launcher">
         <activity
