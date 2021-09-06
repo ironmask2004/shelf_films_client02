@@ -16,7 +16,7 @@ Future<Film> fetchFilm() async {
   print(ipv4json);
 
   final response = await http
-   .get(Uri.parse('http://82.137.207.84:8083/films/2'),
+   .get(Uri.parse('http://kflihan.dynu.net:8083/films/2'),
       headers: {
         "Accept": "application/json",
         "Access-Control-Allow-Origin": "*"
