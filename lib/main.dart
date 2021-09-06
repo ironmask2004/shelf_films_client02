@@ -16,7 +16,13 @@ Future<Film> fetchFilm() async {
   print(ipv4json);
 
   final response = await http
-   .get(Uri.parse('http://kflino.ics.com:8083/films/2'));
+   .get(Uri.parse('http://82.137.207.84:8083/films/2'),
+      headers: {
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      });
+
+
   //  .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/66'));
   print("returned " +  response.body.toString());
   if (response.statusCode == 200) {
