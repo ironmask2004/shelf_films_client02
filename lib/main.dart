@@ -16,14 +16,19 @@ Future<Film> fetchFilm() async {
   print(ipv4json);
 
 
-  var url = 'http://kflihan.dynu.net:8083/films/3';
-  final response = await http
-  .get(Uri.parse( url)); //,
+ // var url = 'http://kflihan.dynu.net:8083/films/3'; // working web client
+ // final response = await http
+ // .get(Uri.parse( url)); //,
     //  headers: {
     //    "Accept": "application/json",
     //    "Access-Control-Allow-Origin": "*"
     //  });
 
+
+  var url = new Uri.http("192.168.0.3:8083", "films/4");
+  print(url);
+  var client = http.Client();
+  http.Response response = await client.get(url);
 
    //.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/66'));
   print("returned " +  response.body.toString());
