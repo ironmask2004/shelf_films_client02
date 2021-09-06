@@ -15,15 +15,17 @@ Future<Film> fetchFilm() async {
   final ipv4json = await Ipify.ipv64(format: Format.JSON);
   print(ipv4json);
 
+
+  var url = 'http://kflihan.dynu.net:8083/films/3';
   final response = await http
-   .get(Uri.parse('http://kflihan.dynu.net:8083/films/2'),
-      headers: {
-        "Accept": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      });
+  .get(Uri.parse( url)); //,
+    //  headers: {
+    //    "Accept": "application/json",
+    //    "Access-Control-Allow-Origin": "*"
+    //  });
 
 
-  //  .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/66'));
+   //.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/66'));
   print("returned " +  response.body.toString());
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
