@@ -6,15 +6,6 @@ import 'package:http/http.dart' as http;
 
 Future<Film> fetchFilm() async {
   print('Getting Film');
-  final ipv4 = await Ipify.ipv4();
-  print(ipv4); // 98.207.254.136
-
-  final ipv6 = await Ipify.ipv64();
-  print(ipv6); // 98.207.254.136 or 2a00:1450:400f:80d::200e
-
-  final ipv4json = await Ipify.ipv64(format: Format.JSON);
-  print(ipv4json);
-
 
  // var url = 'http://kflihan.dynu.net:8083/films/3'; // working web client
  // final response = await http
@@ -25,13 +16,14 @@ Future<Film> fetchFilm() async {
     //  });
 
 
-  var url = new Uri.http("localhost:8083", "films/7");
+  var url = new Uri.http("localhost:8083", "films/6"); // working web client
   print(url);
   var client = http.Client();
   http.Response response = await client.get(url);
 
    //.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/66'));
   print("returned " +  response.body.toString());
+
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
